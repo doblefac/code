@@ -1,0 +1,131 @@
+iD3nT#q!r
+
+
+curl -X POST -u admin:Identian2022*  -ks -XPOST "https://localhost:9200/_aliases?pretty" -H 'Content-Type: application/json' -d'
+{
+  "actions": [
+    {
+      "add": {
+        "index": ".kibana_2",
+        "alias": ".kibana"
+      }
+    }
+  ]
+}
+'
+
+
+
+
+
+
+
+
+
+
+
+
+Received From: (2SERVN094) any->EventChannel
+Rule: 109210 fired (level 12) -> "Potential User Login Via Pass the Hash Detected."
+Portion of the log(s):
+
+{"win":{"system":{"providerName":"Microsoft-Windows-Security-Auditing","providerGuid":"{54849625-5478-4994-a5ba-3e3b0328c30d}","eventID":"4624","version":"2","level":"0","task":"12544","opcode":"0","keywords":"0x8020000000000000","systemTime":"2023-12-15T22:11:01.830912100Z","eventRecordID":"448575832","processID":"760","threadID":"3532","channel":"Security","computer":"2SERVN094.tva.com","severityValue":"AUDIT_SUCCESS","message":"\"An account was successfully logged on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-21-568874181-194922469-3802303604-500\r\n\tAccount Name:\t\tAdministrator\r\n\tAccount Domain:\t\tTVA\r\n\tLogon ID:\t\t0x1469F3\r\n\r\nLogon Information:\r\n\tLogon Type:\t\t9\r\n\tRestricted Admin Mode:\t-\r\n\tVirtual Account:\t\tNo\r\n\tElevated Token:\t\tYes\r\n\r\nImpersonation Level:\t\tImpersonation\r\n\r\nNew Logon:\r\n\tSecurity ID:\t\tS-1-5-21-568874181-194922469-3802303604-500\r\n\tAccount Name:\t\tAdministrator\r\n\tAccount Domain:\t\tTVA\r\n\tLogon ID:\t\t0x1F5
+ A69E\r\n\tLinked Logon ID:\t\t0x0\r\n\tNetwork Account Name:\t\r\n\tNetwork Account Domain:\ttva.com\r\n\tLogon GUID:\t\t{00000000-0000-0000-0000-000000000000}\r\n\r\nProcess Information:\r\n\tProcess ID:\t\t0x2638\r\n\tProcess Name:\t\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\t-\r\n\tSource Network Address:\t::1\r\n\tSource Port:\t\t0\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tseclogo\r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon session is created. It is generated on the computer that was accessed.\r\n\r\nThe subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.\r\n\r\nThe logon type field indicates the kind of logon that occurred. The most common ty
+ pes are 2 (interactive) and 3 (network).\r\n\r\nThe New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.\r\n\r\nThe network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.\r\n\r\nThe impersonation level field indicates the extent to which a process in the logon session can impersonate.\r\n\r\nThe authentication information fields provide detailed information about this specific logon request.\r\n\t- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.\r\n\t- Transited services indicate which intermediate services have participated in this logon request.\r\n\t- Package name indicates which sub-protocol was used among the NTLM protocols.\r\n\t- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.\""},"eventdata":{"subjectUserSid":"S-1-5-21-5688741
+ 81-194922469-3802303604-500","subjectUserName":"Administrator","subjectDomainName":"TVA","subjectLogonId":"0x1469f3","targetUserSid":"S-1-5-21-568874181-194922469-3802303604-500","targetUserName":"Administrator","targetDomainName":"TVA","targetLogonId":"0x1f5a69e","logonType":"9","logonProcessName":"seclogo","authenticationPackageName":"Negotiate","logonGuid":"{00000000-0000-0000-0000-000000000000}","keyLength":"0","processId":"0x2638","processName":"C:\\\\Windows\\\\System32\\\\svchost.exe","ipAddress":"::1","ipPort":"0","impersonationLevel":"%%1833","targetOutboundDomainName":"tva.com","virtualAccount":"%%1843","targetLinkedLogonId":"0x0","elevatedToken":"%%1842"}}}
+win.system.providerName: Microsoft-Windows-Security-Auditing
+win.system.providerGuid: {54849625-5478-4994-a5ba-3e3b0328c30d}
+win.system.eventID: 4624
+win.system.version: 2
+win.system.level: 0
+win.system.task: 12544
+win.system.opcode: 0
+win.system.keywords: 0x8020000000000000
+win.system.systemTime: 2023-12-15T22:11:01.830912100Z
+win.system.eventRecordID: 448575832
+win.system.processID: 760
+win.system.threadID: 3532
+win.system.channel: Security
+win.system.computer: 2SERVN094.tva.com
+win.system.severityValue: AUDIT_SUCCESS
+win.system.message: "An account was successfully logged on.
+
+Subject:
+        Security ID:            S-1-5-21-568874181-194922469-3802303604-500
+        Account Name:           Administrator
+        Account Domain:         TVA
+        Logon ID:               0x1469F3
+
+Logon Information:
+        Logon Type:             9
+        Restricted Admin Mode:  -
+        Virtual Account:                No
+        Elevated Token:         Yes
+
+Impersonation Level:            Impersonation
+
+New Logon:
+        Security ID:            S-1-5-21-568874181-194922469-3802303604-500
+        Account Name:           Administrator
+        Account Domain:         TVA
+        Logon ID:               0x1F5A69E
+        Linked Logon ID:                0x0
+        Network Account Name:   
+        Network Account Domain: tva.com
+        Logon GUID:             {00000000-0000-0000-0000-000000000000}
+
+Process Information:
+        Process ID:             0x2638
+        Process Name:           C:\Windows\System32\svchost.exe
+
+Network Information:
+        Workstation Name:       -
+        Source Network Address: ::1
+        Source Port:            0
+
+Detailed Authentication Information:
+        Logon Process:          seclogo
+        Authentication Package: Negotiate
+        Transited Services:     -
+        Package Name (NTLM only):       -
+        Key Length:             0
+
+This event is generated when a logon session is created. It is generated on the computer that was accessed.
+
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
+
+The logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).
+
+The New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.
+
+The network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.
+
+The impersonation level field indicates the extent to which a process in the logon session can impersonate.
+
+The authentication information fields provide detailed information about this specific logon request.
+        - Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.
+        - Transited services indicate which intermediate services have participated in this logon request.
+        - Package name indicates which sub-protocol was used among the NTLM protocols.
+        - Key length indicates the length of the generated session key. This will be 0 if no session key was requested."
+win.eventdata.subjectUserSid: S-1-5-21-568874181-194922469-3802303604-500
+win.eventdata.subjectUserName: Administrator
+win.eventdata.subjectDomainName: TVA
+win.eventdata.subjectLogonId: 0x1469f3
+win.eventdata.targetUserSid: S-1-5-21-568874181-194922469-3802303604-500
+win.eventdata.targetUserName: Administrator
+win.eventdata.targetDomainName: TVA
+win.eventdata.targetLogonId: 0x1f5a69e
+win.eventdata.logonType: 9
+win.eventdata.logonProcessName: seclogo
+win.eventdata.authenticationPackageName: Negotiate
+win.eventdata.logonGuid: {00000000-0000-0000-0000-000000000000}
+win.eventdata.keyLength: 0
+win.eventdata.processId: 0x2638
+win.eventdata.processName: C:\\Windows\\System32\\svchost.exe
+win.eventdata.ipAddress: ::1
+win.eventdata.ipPort: 0
+win.eventdata.impersonationLevel: %%1833
+win.eventdata.targetOutboundDomainName: tva.com
+win.eventdata.virtualAccount: %%1843
+win.eventdata.targetLinkedLogonId: 0x0
+win.eventdata.elevatedToken: %%1842
